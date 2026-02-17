@@ -68,7 +68,12 @@
     <header class="site-header">
       <div class="header-shell">
         <a class="brand" href="#top" aria-label="Maison Noah home">Maison Noah</a>
-        <nav class="smart-nav" aria-label="Quick section navigation">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="smart-nav" id="mobileMenu" aria-label="Quick section navigation">
           <div class="smart-nav-track">
             <a class="smart-link active" href="#home" data-section="home">Home</a>
             <a class="smart-link" href="#about" data-section="about">About</a>
@@ -870,6 +875,33 @@
       updateProgress();
       window.addEventListener("scroll", updateProgress, { passive: true });
       window.addEventListener("resize", updateProgress);
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("mobileMenuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const navLinks = document.querySelectorAll(".smart-link");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", !isOpen);
+        mobileMenu.classList.toggle("open");
+      });
+
+      // Close menu when link is clicked
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.setAttribute("aria-expanded", "false");
+          mobileMenu.classList.remove("open");
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".site-header")) {
+          menuToggle.setAttribute("aria-expanded", "false");
+          mobileMenu.classList.remove("open");
+        }
+      });
     </script>
   </body>
 </html>

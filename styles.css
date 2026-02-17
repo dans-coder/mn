@@ -1583,6 +1583,7 @@ h3 {
 @media (max-width: 719px) {
   .mobile-menu-toggle {
     display: flex;
+    margin-left: auto;
   }
 
   .site-header {

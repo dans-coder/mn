@@ -975,21 +975,38 @@
       font-size: 12px;
     }
     .navbar-container {
-      gap: 20px;
+      gap: 16px;
     }
     .mode-toggle-btn {
       padding: 8px 14px;
       font-size: 11px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
   @media (max-width: 640px) {
     .navbar {
       padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+    }
+    .navbar-container {
+      gap: 12px;
     }
     .mobile-menu-toggle {
       display: flex;
-      order: -1;
+      padding: 8px 12px;
+      min-height: 44px;
+      min-width: 44px;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 200ms ease;
+    }
+    .mobile-menu-toggle:active {
+      opacity: 0.7;
     }
     .navbar-links {
       display: none;
@@ -997,30 +1014,44 @@
       top: 56px;
       left: 0;
       right: 0;
+      bottom: 0;
       flex-direction: column;
-      background: #fff;
-      border-top: 1px solid var(--corporate-border);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-top: 2px solid var(--corporate-border);
       padding: 0;
       gap: 0;
       z-index: 30;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: none;
+      max-height: calc(100vh - 56px);
+      overflow-y: auto;
     }
     .navbar-links.open {
       display: flex;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
     }
     .navbar-links a {
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--corporate-border);
+      padding: 1rem 24px;
+      border-bottom: 1px solid #e8dfd1;
+      border-left: 3px solid transparent;
       display: block;
       width: 100%;
       text-align: left;
+      transition: all 180ms ease;
+      font-weight: 500;
     }
-    .mode-toggle-btn {
-      padding: 6px 10px;
-      font-size: 10px;
-      letter-spacing: 0px;
+    .navbar-links a:hover {
+      background: rgba(212, 175, 55, 0.06);
     }
-    .footer {
+    .navbar-links a.active {
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.12), transparent);
+      border-left-color: #D4AF37;
+      font-weight: 600;
+      transition: all 200ms ease;
+    }
+    .mode-toggle-btn:active {
+      transform: scale(0.97);
+    }
       padding: 40px 24px;
     }
     .footer-content {
@@ -1182,12 +1213,12 @@
 <nav class="navbar">
   <div class="navbar-container">
     <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="../mnlogo.png" alt="Maison Noah" />Maison Noah</a>
+    <button class="mode-toggle-btn corporate" id="modeToggleBtn" onclick="toggleMode()" title="Switch to Normal View">Switch to Normal View</button>
     <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <button class="mode-toggle-btn corporate" id="modeToggleBtn" onclick="toggleMode()" title="Switch to Normal View">Switch to Normal View</button>
     <div class="navbar-links" id="mobileMenu">
       <a href="index.html">Home</a>
       <a href="index.html#corporate" class="active">Corporate Gifting</a>

@@ -1640,6 +1640,11 @@ h3 {
     gap: 0.3rem;
   }
 
+  .mode-toggle-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.65rem;
+  }
+
   .smart-nav {
     position: fixed;
     top: 56px;

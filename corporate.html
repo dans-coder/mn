@@ -110,6 +110,38 @@
     transform: translateY(0);
   }
 
+  /* HAMBURGER MENU */
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 32;
+    gap: 5px;
+  }
+
+  .mobile-menu-toggle span {
+    width: 24px;
+    height: 2.5px;
+    background: var(--corporate-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
   .navbar-links {
     display: flex;
     gap: 32px;
@@ -1058,8 +1090,33 @@
     .navbar {
       padding: 12px 24px;
     }
+    .mobile-menu-toggle {
+      display: flex;
+      order: -1;
+    }
     .navbar-links {
       display: none;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: #fff;
+      border-top: 1px solid var(--corporate-border);
+      padding: 0;
+      gap: 0;
+      z-index: 30;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-links.open {
+      display: flex;
+    }
+    .navbar-links a {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--corporate-border);
+      display: block;
+      width: 100%;
+      text-align: left;
     }
     .mode-toggle-btn {
       padding: 6px 10px;
@@ -1228,8 +1285,13 @@
 <nav class="navbar">
   <div class="navbar-container">
     <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="mnlogo.png" alt="Maison Noah" />Maison Noah</a>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <button class="mode-toggle-btn corporate" id="modeToggleBtn" onclick="toggleMode()" title="Switch to Normal View">Switch to Normal View</button>
-    <div class="navbar-links">
+    <div class="navbar-links" id="mobileMenu">
       <a href="index.html">Home</a>
       <a href="index.html#corporate" class="active">Corporate Gifting</a>
       <a href="index.html#products">Products</a>
@@ -1822,6 +1884,24 @@
     document.getElementById(id).classList.add('active');
     event.target.classList.add('active');
   }
+
+  // Toggle hamburger menu
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  mobileMenuToggle.addEventListener('click', function() {
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('open');
+  });
+
+  // Close menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('open');
+    });
+  });
 
   // Toggle mode between Normal and Corporate
   function toggleMode() {

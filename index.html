@@ -31,10 +31,7 @@
       name="twitter:image"
       content="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80"
     />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161513'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%23f6f4ef'%3EM%3C/text%3E%3C/svg%3E"
-    />
+    <link rel="icon" href="mnlogo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -67,12 +64,13 @@
 
     <header class="site-header">
       <div class="header-shell">
-        <a class="brand" href="#top" aria-label="Maison Noah home">Maison Noah</a>
+        <a class="brand" href="#top" aria-label="Maison Noah home"><img class="brand-logo" src="mnlogo.png" alt="Maison Noah" />Maison Noah</a>
         <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
+        <button class="mode-toggle-btn" id="modeToggleBtn" onclick="toggleMode()" title="Switch to Corporate View">Switch to Corporate View</button>
         <nav class="smart-nav" id="mobileMenu" aria-label="Quick section navigation">
           <div class="smart-nav-track">
             <a class="smart-link active" href="#home" data-section="home">Home</a>
@@ -561,6 +559,7 @@
     </a>
 
     <footer class="site-footer reveal">
+      <div class="footer-logo-section"><img class="footer-logo" src="mnlogo.png" alt="Maison Noah logo" /></div>
       <p>&copy; <span id="year"></span> Maison Noah. Elevated gifting, delivered with care.</p>
       <div class="footer-social" aria-label="Maison Noah social media">
         <span>Follow</span>
@@ -901,6 +900,11 @@
             mobileMenu.classList.remove("open");
           }
         });
+      }
+
+      // Toggle mode between Normal and Corporate
+      function toggleMode() {
+        window.location.href = 'corporate.html';
       }
     </script>
   </body>

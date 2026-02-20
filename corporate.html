@@ -3,148 +3,447 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Corporate Gifting Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Maison Noah Corporate Gifting Solutions</title>
+<link rel="icon" href="mnlogo.png" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gold: #C9A84C;
-    --gold-light: #E8D5A3;
-    --gold-pale: #FDF6E3;
-    --ink: #1A1208;
-    --ink-soft: #3D2E0E;
-    --cream: #FAF7F0;
-    --warm-white: #FFFEF9;
-    --shadow: rgba(26,18,8,0.12);
+    --corporate-dark: #0F1419;
+    --corporate-blue: #1E3A5F;
+    --corporate-accent: #D4AF37;
+    --corporate-light: #F8F9FA;
+    --corporate-text: #2D3E50;
+    --corporate-border: #E0E6ED;
+    --corporate-success: #2ECC71;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--corporate-light) 0%, #ECEEF2 100%);
+    color: var(--corporate-text);
     min-height: 100vh;
   }
 
-  /* HERO */
+  /* TOP BANNER */
+  .corporate-banner {
+    background: linear-gradient(90deg, var(--corporate-dark) 0%, var(--corporate-blue) 100%);
+    padding: 12px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--corporate-accent);
+  }
+
+  /* NAVBAR */
+  .navbar {
+    background: #fff;
+    border-bottom: 1px solid var(--corporate-border);
+    padding: 18px 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(31, 58, 95, 0.06);
+  }
+
+  .navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--corporate-dark);
+    text-decoration: none;
+    white-space: nowrap;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.5px;
+  }
+
+  .navbar-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+
+  .navbar-brand:hover {
+    color: var(--corporate-accent);
+  }
+
+  .mode-toggle-btn {
+    padding: 10px 20px;
+    background: var(--corporate-accent);
+    color: var(--corporate-dark);
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: auto;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .mode-toggle-btn:hover {
+    background: #E5C158;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+  }
+
+  .mode-toggle-btn:active {
+    transform: translateY(0);
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex: 1;
+  }
+
+  .navbar-links a {
+    font-size: 13px;
+    color: var(--corporate-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .navbar-links a:hover,
+  .navbar-links a.active {
+    color: var(--corporate-accent);
+  }
+
+  /* HERO / HEADER */
   .hero {
-    background: var(--ink);
-    padding: 72px 48px 60px;
+    background: linear-gradient(135deg, var(--corporate-dark) 0%, var(--corporate-blue) 100%);
+    padding: 80px 48px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    min-height: 600px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
   }
+
   .hero::before {
     content: '';
     position: absolute;
-    top: -80px; right: -80px;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%);
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,%3Csvg width="100" height="100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0,50 Q25,0 50,50 T100,50" stroke="%23FFF" stroke-width="0.5" fill="none" opacity="0.1"/%3E%3C/svg%3E') repeat;
+    pointer-events: none;
   }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; left: 10%;
-    width: 280px; height: 280px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    flex: 0 1 auto;
+  }
+
+  .hero-visual {
+    position: relative;
+    z-index: 2;
+    flex: 0 1 auto;
+    width: 500px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-visual svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+    animation: floatAnimation 4s ease-in-out infinite;
+  }
+
+  @keyframes floatAnimation {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-content {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .hero-visual {
+    animation: slideInRight 0.8s ease-out;
   }
 
   .hero-tag {
     display: inline-block;
     font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 3px;
+    font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid rgba(201,168,76,0.4);
-    padding: 6px 16px;
-    border-radius: 100px;
-    margin-bottom: 28px;
+    color: var(--corporate-accent);
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--corporate-accent);
+    padding: 8px 18px;
+    border-radius: 6px;
+    margin-bottom: 24px;
   }
 
   .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 5vw, 60px);
-    color: var(--warm-white);
-    line-height: 1.15;
-    max-width: 620px;
+    font-size: clamp(42px, 6vw, 72px);
+    color: #fff;
+    line-height: 1.1;
     margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -1px;
   }
 
   .hero h1 em {
-    color: var(--gold);
-    font-style: italic;
+    color: var(--corporate-accent);
+    font-style: normal;
+    font-weight: 700;
   }
 
   .hero p {
-    color: rgba(255,255,255,0.55);
-    font-size: 15px;
-    font-weight: 300;
-    max-width: 480px;
-    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 580px;
+    line-height: 1.8;
     margin-bottom: 40px;
   }
 
   .hero-meta {
     display: flex;
-    gap: 32px;
+    gap: 48px;
     flex-wrap: wrap;
   }
 
   .meta-chip {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-    font-weight: 300;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
   }
 
   .meta-chip span {
-    width: 6px; height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--corporate-accent);
     display: inline-block;
+  }
+
+  /* QUALITY PHILOSOPHY SECTION */
+  .quality-philosophy-section {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    padding: 64px 48px;
+    margin-bottom: 40px;
+    border-top: 2px solid var(--corporate-accent);
+    border-bottom: 1px solid var(--corporate-border);
+  }
+
+  .quality-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .quality-philosophy-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--corporate-dark);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 52px;
+    letter-spacing: -0.5px;
+    animation: slideInDown 0.6s ease-out;
+  }
+
+  .quality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+  }
+
+  .quality-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid var(--corporate-border);
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 0.6s ease-out backwards;
+    position: relative;
+  }
+
+  .quality-card:nth-child(1) { animation-delay: 0.1s; }
+  .quality-card:nth-child(2) { animation-delay: 0.2s; }
+  .quality-card:nth-child(3) { animation-delay: 0.3s; }
+  .quality-card:nth-child(4) { animation-delay: 0.4s; }
+  .quality-card:nth-child(5) { animation-delay: 0.5s; }
+  .quality-card:nth-child(6) { animation-delay: 0.6s; }
+
+  .quality-card:hover {
+    border-color: var(--corporate-accent);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+  }
+
+  .quality-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .quality-card:hover .quality-icon {
+    transform: scale(1.2) rotate(-5deg);
+  }
+
+  .quality-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--corporate-dark);
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+
+  .quality-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* FILTER BAR */
   .filter-bar {
-    background: var(--warm-white);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
+    background: #fff;
+    border-bottom: 2px solid var(--corporate-border);
     padding: 0 48px;
     display: flex;
     gap: 0;
     overflow-x: auto;
     scrollbar-width: none;
+    max-width: 1400px;
+    margin: 0 auto;
   }
   .filter-bar::-webkit-scrollbar { display: none; }
 
   .filter-btn {
-    padding: 18px 24px;
-    font-size: 13px;
-    font-weight: 500;
-    font-family: 'DM Sans', sans-serif;
-    color: rgba(26,18,8,0.45);
+    padding: 20px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    color: var(--corporate-text);
     border: none;
     background: none;
     cursor: pointer;
     white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s;
-    letter-spacing: 0.3px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  .filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--corporate-accent);
+    transition: width 0.3s ease;
+  }
+
+  .filter-btn:hover::after,
+  .filter-btn.active::after {
+    width: 100%;
   }
 
   .filter-btn.active, .filter-btn:hover {
-    color: var(--ink);
-    border-bottom-color: var(--gold);
+    color: var(--corporate-accent);
+    border-bottom-color: var(--corporate-accent);
   }
 
   /* SECTION */
   .section {
-    padding: 56px 48px;
+    padding: 64px 48px;
     display: none;
     animation: fadeIn 0.4s ease;
+    max-width: 1400px;
+    margin: 0 auto;
   }
   .section.active { display: block; }
 
@@ -157,52 +456,121 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
     flex-wrap: wrap;
     gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid var(--corporate-accent);
+    position: relative;
+  }
+
+  .section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(90deg, var(--corporate-accent), transparent);
+    animation: expandWidth 0.8s ease-out forwards;
+  }
+
+  @keyframes expandWidth {
+    to { width: 100%; }
   }
 
   .section-header h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: var(--ink);
+    font-size: 32px;
+    color: var(--corporate-dark);
+    font-weight: 700;
+    letter-spacing: -0.5px;
   }
 
   .section-header p {
     font-size: 14px;
-    color: rgba(26,18,8,0.5);
-    font-weight: 300;
-    max-width: 400px;
-    line-height: 1.6;
+    color: #666;
+    font-weight: 400;
+    max-width: 450px;
+    line-height: 1.7;
     text-align: right;
+  }
+
+  /* SECTION INTRO */
+  .section-intro {
+    margin-bottom: 40px;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.03), rgba(212, 175, 55, 0.03));
+    border-left: 4px solid var(--corporate-accent);
+    border-radius: 8px;
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+
+  .section-intro p {
+    font-size: 15px;
+    color: var(--corporate-text);
+    line-height: 1.8;
+    font-weight: 400;
   }
 
   /* OCCASION ROW */
   .occasion-block {
-    margin-bottom: 52px;
+    margin-bottom: 56px;
   }
 
   .occasion-label {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(212, 175, 55, 0.02));
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--corporate-accent);
+  }
+
+  .occasion-label:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    transform: translateX(8px);
   }
 
   .occasion-label .icon {
-    width: 36px; height: 36px;
-    background: var(--ink);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--corporate-accent), #E5C158);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .occasion-label:hover .icon {
+    transform: scale(1.1) rotate(-5deg);
   }
 
   .occasion-label h3 {
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--ink-soft);
+    color: var(--corporate-dark);
+  }
+
+  .occasion-label .budget-tag {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--corporate-accent);
+    background: #FFF4E0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    border: 1px solid rgba(212, 175, 55, 0.3);
   }
 
   .occasion-label .budget-tag {
@@ -218,84 +586,104 @@
   /* GIFT GRID */
   .gift-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
   }
 
   .gift-card {
-    background: var(--warm-white);
-    border: 1px solid rgba(201,168,76,0.15);
-    border-radius: 16px;
-    padding: 24px;
+    background: #fff;
+    border: 1px solid var(--corporate-border);
+    border-radius: 12px;
+    padding: 28px;
     position: relative;
-    transition: all 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
+    animation: fadeInUp 0.6s ease-out backwards;
   }
 
+  .gift-card:nth-child(1) { animation-delay: 0.1s; }
+  .gift-card:nth-child(2) { animation-delay: 0.2s; }
+  .gift-card:nth-child(3) { animation-delay: 0.3s; }
+  .gift-card:nth-child(4) { animation-delay: 0.4s; }
+  .gift-card:nth-child(5) { animation-delay: 0.5s; }
+  .gift-card:nth-child(6) { animation-delay: 0.6s; }
+  .gift-card:nth-child(7) { animation-delay: 0.7s; }
+  .gift-card:nth-child(8) { animation-delay: 0.8s; }
+
   .gift-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px var(--shadow);
+    border-color: var(--corporate-accent);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
   }
 
   .gift-card .emoji {
-    font-size: 32px;
+    font-size: 40px;
     display: block;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .gift-card:hover .emoji {
+    transform: scale(1.2) rotate(-5deg);
   }
 
   .gift-card h4 {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 8px;
-    line-height: 1.3;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--corporate-dark);
+    margin-bottom: 12px;
+    line-height: 1.4;
   }
 
   .gift-card p {
     font-size: 13px;
-    color: rgba(26,18,8,0.55);
-    font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 16px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 20px;
   }
 
   .gift-card .price {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--corporate-accent);
+    letter-spacing: 0.5px;
   }
 
   .gift-card .badge {
     position: absolute;
-    top: 16px; right: 16px;
+    top: 16px;
+    right: 16px;
     font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 100px;
+    padding: 6px 12px;
+    border-radius: 6px;
   }
 
-  .badge-emotion { background: #FFF0E6; color: #C4622D; }
-  .badge-innovation { background: #E8F4FF; color: #2D6EC4; }
-  .badge-premium { background: rgba(201,168,76,0.15); color: #8B6914; }
+  .badge-emotion { background: #FFE5D1; color: #C4622D; }
+  .badge-innovation { background: #D1E3FF; color: #2D6EC4; }
+  .badge-premium { background: #FFF4E0; color: #C4A84C; }
 
   /* DIVIDER */
   .divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(201,168,76,0.3), transparent);
-    margin: 48px 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--corporate-border), transparent);
+    margin: 56px 0;
   }
 
   /* TIPS BOX */
   .tips-box {
-    background: var(--ink);
-    border-radius: 20px;
-    padding: 40px;
-    margin-top: 48px;
+    background: linear-gradient(135deg, var(--corporate-dark), var(--corporate-blue));
+    border-radius: 16px;
+    padding: 48px;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     overflow: hidden;
+    max-width: 1400px;
   }
 
   .tips-box::before {
@@ -355,31 +743,199 @@
 
   /* FOOTER */
   .footer {
-    background: var(--warm-white);
-    border-top: 1px solid rgba(201,168,76,0.15);
-    padding: 28px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
+    background: linear-gradient(180deg, var(--corporate-dark) 0%, #0A0D11 100%);
+    color: var(--corporate-light);
+    margin-top: 100px;
+    padding: 80px 60px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
   }
 
-  .footer p {
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-col h4::before {
+    content: '';
+    width: 3px;
+    height: 20px;
+    background: var(--corporate-accent);
+    border-radius: 2px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-col li {
+    margin-bottom: 14px;
+  }
+
+  .footer-col a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-col a:hover {
+    color: var(--corporate-accent);
+    transform: translateX(4px);
+  }
+
+  .footer-cta {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.03));
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .footer-cta h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #FFF;
+  }
+
+  .footer-cta p {
+    margin: 0;
     font-size: 13px;
-    color: rgba(26,18,8,0.4);
-    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  .footer-cta button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--corporate-accent), #E5C158);
+    color: var(--corporate-dark);
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    align-self: flex-start;
+  }
+
+  .footer-cta button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  }
+
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+  }
+
+  .footer-socials a {
+    width: 36px;
+    height: 36px;
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--corporate-accent);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-socials a:hover {
+    background: var(--corporate-accent);
+    color: var(--corporate-dark);
+    transform: translateY(-4px);
   }
 
   .footer-logo {
     font-family: 'Playfair Display', serif;
     font-size: 16px;
-    color: var(--gold);
+    color: var(--corporate-accent);
     letter-spacing: 1px;
+  }
+
+  @media (max-width: 1024px) {
+    .hero {
+      flex-direction: column;
+      gap: 40px;
+      min-height: auto;
+      padding: 60px 48px;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+    .hero-visual {
+      min-height: 400px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 40px 24px;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+    .hero-visual {
+      min-height: 300px;
+      width: 100%;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+    }
   }
 
   @media (max-width: 640px) {
     .hero, .section, .footer { padding-left: 24px; padding-right: 24px; }
+    .hero {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+    .hero-visual {
+      width: 100%;
+    }
     .filter-bar { padding: 0 24px; }
     .section-header p { text-align: left; }
     .gift-grid { grid-template-columns: 1fr 1fr; }
@@ -388,20 +944,260 @@
   @media (max-width: 420px) {
     .gift-grid { grid-template-columns: 1fr; }
   }
+
+  /* NAVBAR */
+  .navbar {
+    background: var(--warm-white);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 16px 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .navbar-logo {
+    height: 28px;
+    width: auto;
+    display: block;
+  }
+
+  .navbar-brand:hover {
+    color: var(--gold);
+  }
+
+  .mode-toggle-btn {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #C9A84C, #E8D5A3);
+    color: var(--ink);
+    border: none;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  .mode-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(201, 168, 76, 0.2);
+  }
+
+  .mode-toggle-btn:active {
+    transform: translateY(0);
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex: 1;
+  }
+
+  .navbar-links a {
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .navbar-links a:hover {
+    color: var(--gold);
+  }
+
+  .navbar-links a.active {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-links {
+      gap: 16px;
+    }
+    .navbar-links a {
+      font-size: 12px;
+    }
+    .navbar-container {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .navbar {
+      padding: 12px 24px;
+    }
+    .navbar-links {
+      display: none;
+    }
+    .footer {
+      padding: 40px 24px;
+    }
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .footer-cta {
+      grid-column: span 1;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .footer {
+      padding: 60px 40px;
+    }
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+  }
 </style>
 </head>
 <body>
 
+<!-- CORPORATE BANNER -->
+<div class="corporate-banner">Premium Corporate Gifting Solutions</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="mnlogo.png" alt="Maison Noah" />Maison Noah</a>
+    <button class="mode-toggle-btn corporate" id="modeToggleBtn" onclick="toggleMode()" title="Switch to Normal View">Switch to Normal View</button>
+    <div class="navbar-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#corporate" class="active">Corporate Gifting</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#ordering">How To Order</a>
+    </div>
+  </div>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-tag">Corporate Gifting Guide 2025</div>
-  <h1>Gifts that <em>feel</em> like<br>they matter.</h1>
-  <p>Curated across all occasions and audiences — every gift selected to balance emotional resonance with genuine innovation.</p>
-  <div class="hero-meta">
-    <div class="meta-chip"><span></span> ₹1,000 – ₹5,000 per gift</div>
-    <div class="meta-chip"><span></span> 4 Audiences</div>
-    <div class="meta-chip"><span></span> 4 Occasions</div>
-    <div class="meta-chip"><span></span> 40+ Ideas</div>
+  <div class="hero-content">
+    <div class="hero-tag">Corporate Gifting Guide 2025</div>
+    <h1>Gifts that <em>feel</em> like<br>they matter.</h1>
+    <p>Curated across all occasions and audiences — every gift selected to balance emotional resonance with genuine innovation.</p>
+    <div class="hero-meta">
+      <div class="meta-chip"><span></span> ₹1,000 – ₹5,000 per gift</div>
+      <div class="meta-chip"><span></span> 4 Audiences</div>
+      <div class="meta-chip"><span></span> 4 Occasions</div>
+      <div class="meta-chip"><span></span> 40+ Ideas</div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background circle -->
+      <circle cx="200" cy="200" r="180" fill="rgba(212, 175, 55, 0.08)" stroke="rgba(212, 175, 55, 0.15)" stroke-width="2"/>
+      
+      <!-- Gift box -->
+      <g>
+        <rect x="120" y="100" width="160" height="160" fill="#D4AF37" rx="8"/>
+        <rect x="130" y="110" width="140" height="140" fill="#E5C158" rx="6"/>
+        
+        <!-- Gift ribbon -->
+        <rect x="190" y="95" width="20" height="190" fill="#1E3A5F"/>
+        <path d="M 160 140 Q 140 130 130 150 Q 140 160 160 150" fill="#1E3A5F"/>
+        <path d="M 240 140 Q 260 130 270 150 Q 260 160 240 150" fill="#1E3A5F"/>
+        
+        <!-- Bow -->
+        <circle cx="200" cy="95" r="12" fill="#1E3A5F"/>
+      </g>
+
+      <!-- Floating elements -->
+      <g opacity="0.6">
+        <circle cx="80" cy="120" r="15" fill="#D4AF37"/>
+        <circle cx="320" cy="180" r="18" fill="#D4AF37"/>
+        <circle cx="100" cy="300" r="12" fill="#D4AF37"/>
+        <circle cx="300" cy="80" r="10" fill="#D4AF37"/>
+      </g>
+
+      <!-- Decorative dots -->
+      <g fill="#D4AF37" opacity="0.4">
+        <circle cx="150" cy="50" r="4"/>
+        <circle cx="250" cy="60" r="4"/>
+        <circle cx="350" cy="150" r="4"/>
+        <circle cx="50" cy="250" r="4"/>
+        <circle cx="350" cy="300" r="4"/>
+      </g>
+
+      <!-- Checkmark accent -->
+      <g transform="translate(200, 200)">
+        <circle cx="0" cy="0" r="50" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.3"/>
+        <path d="M -20 0 L -5 15 L 20 -10" stroke="#D4AF37" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- WHY QUALITY OVER QUANTITY SECTION -->
+<div class="quality-philosophy-section">
+  <div class="quality-inner">
+    <h2>Why We Champion Quality Over Quantity</h2>
+    <div class="quality-grid">
+      <div class="quality-card">
+        <div class="quality-icon">✨</div>
+        <h3>Lasting Impressions</h3>
+        <p>One thoughtfully curated gift creates a memory that lasts years. Generic bulk gifts are forgotten within weeks. Quality speaks to intention.</p>
+      </div>
+      <div class="quality-card">
+        <div class="quality-icon">🎯</div>
+        <h3>Authentic Connection</h3>
+        <p>Curated gifts demonstrate that you understand and respect the recipient. They signal genuine care, not a checkbox exercise.</p>
+      </div>
+      <div class="quality-card">
+        <div class="quality-icon">💎</div>
+        <h3>Brand Elevation</h3>
+        <p>Premium gifts elevate your brand's perceived value. Recipients associate quality gifting with excellence, reliability, and prestige.</p>
+      </div>
+      <div class="quality-card">
+        <div class="quality-icon">🌍</div>
+        <h3>Meaningful Impact</h3>
+        <p>Quality often means ethical sourcing, artisan craftsmanship, or sustainable practices. Your gifts become statements of values.</p>
+      </div>
+      <div class="quality-card">
+        <div class="quality-icon">💬</div>
+        <h3>Word-of-Mouth Gold</h3>
+        <p>Recipients talk about exceptional gifts. One premium gift generates conversations and referrals that cheap bulk gifts never could.</p>
+      </div>
+      <div class="quality-card">
+        <div class="quality-icon">📈</div>
+        <h3>ROI That Compounds</h3>
+        <p>Quality gifting drives loyalty, repeat business, and stronger partnerships. The return far exceeds the initial investment.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -422,6 +1218,10 @@
     <div class="section-header">
       <h2>Employees & Teams</h2>
       <p>Gifts that say "we see your effort" — personal, warm, and worth keeping.</p>
+    </div>
+    
+    <div class="section-intro">
+      <p>Your employees are the heartbeat of your organization. Strategic gifting, when thoughtfully curated, transcends the transactional. It communicates genuine recognition, strengthens belonging, and fosters loyalty. Quality gifts for employees signal investment in their wellbeing and create lasting positive associations with your brand—transforming modest gestures into meaningful moments that employees remember and share.</p>
     </div>
 
     <div class="occasion-label">
@@ -537,6 +1337,10 @@
       <h2>Clients & Prospects</h2>
       <p>Gifts that open doors, deepen relationships, and leave your brand in their memory.</p>
     </div>
+    
+    <div class="section-intro">
+      <p>In the business world, relationships are currency. A carefully selected, high-quality gift to a client or prospect amplifies your message beyond any email or call—it demonstrates respect, taste, and genuine interest in the relationship. Quality gifting at critical moments (deal closures, festive seasons, relationship nurturing) sets you apart from competitors and creates an emotional anchor that keeps your brand top-of-mind long after the transaction.</p>
+    </div>
 
     <div class="occasion-label">
       <div class="icon">🤝</div>
@@ -613,6 +1417,10 @@
       <h2>Leadership & Executives</h2>
       <p>Elevated, considered gifts that honour stature without being impersonal.</p>
     </div>
+    
+    <div class="section-intro">
+      <p>Leadership demands discernment. Executive-level gifting requires sophistication—it reflects your organization's values and strategic vision. A thoughtfully curated, premium-quality gift to senior leadership acknowledges their stature while conveying alignment of purpose. These aren't perfunctory gestures; they're investments in strategic partnerships that elevate your brand's presence and demonstrate a commitment to excellence at every level.</p>
+    </div>
 
     <div class="occasion-label">
       <div class="icon">👑</div>
@@ -657,6 +1465,10 @@
     <div class="section-header">
       <h2>Partners & Vendors</h2>
       <p>Gifts that honour the alliance — practical, respectful, and relationship-deepening.</p>
+    </div>
+    
+    <div class="section-intro">
+      <p>Strong partnerships are built on mutual respect and appreciation. Quality gifting to partners and vendors reinforces your commitment to the alliance and acknowledges their role in your shared success. Thoughtfully chosen gifts create touchpoints in an ongoing relationship, strengthen trust, and position both parties for long-term collaboration—transforming transactional partnerships into genuine, values-aligned relationships.</p>
     </div>
 
     <div class="occasion-label">
@@ -813,8 +1625,59 @@
 
 <!-- FOOTER -->
 <div class="footer">
-  <p>Budget range: ₹1,000 – ₹5,000 · All audiences · All occasions</p>
-  <div class="footer-logo">The Gift Guide</div>
+  <div class="footer-content">
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Maison Noah</a></li>
+        <li><a href="#mission">Our Mission</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#careers">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#gifting">Corporate Gifting</a></li>
+        <li><a href="#consultation">Expert Consultation</a></li>
+        <li><a href="#delivery">Custom Delivery</a></li>
+        <li><a href="#bulk">Bulk Orders</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#guide">Gifting Guide</a></li>
+        <li><a href="#blog">Blog & Stories</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#privacy">Privacy Policy</a></li>
+        <li><a href="#terms">Terms of Service</a></li>
+        <li><a href="#returns">Returns & Refunds</a></li>
+        <li><a href="#shipping">Shipping Info</a></li>
+      </ul>
+    </div>
+    <div class="footer-cta">
+      <h4>Need Expert Help?</h4>
+      <p>Our team of gift specialists is ready to curate the perfect corporate gift for your needs. Let's make your gifting memorable.</p>
+      <button>Get in Touch</button>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2024 Maison Noah. All rights reserved. | Crafted with care for corporate excellence.</p>
+    <div class="footer-socials">
+      <a href="#linkedin" title="LinkedIn">in</a>
+      <a href="#instagram" title="Instagram">f</a>
+      <a href="#twitter" title="Twitter">𝕏</a>
+      <a href="#email" title="Email">@</a>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -823,6 +1686,11 @@
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(id).classList.add('active');
     event.target.classList.add('active');
+  }
+
+  // Toggle mode between Normal and Corporate
+  function toggleMode() {
+    window.location.href = 'index.html';
   }
 </script>
 

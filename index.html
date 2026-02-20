@@ -62,26 +62,26 @@
   <body>
     <div class="scroll-progress" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <div class="header-shell">
-        <a class="brand" href="#top" aria-label="Maison Noah home"><img class="brand-logo" src="mnlogo.png" alt="Maison Noah" />Maison Noah</a>
+    <header class="navbar">
+      <div class="navbar-container">
+        <a class="navbar-brand" href="#top" aria-label="Maison Noah home"><img class="navbar-logo" src="mnlogo.png" alt="Maison Noah" />Maison Noah</a>
         <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
         <button class="mode-toggle-btn" id="modeToggleBtn" onclick="toggleMode()" title="Switch to Corporate View">Switch to Corporate View</button>
-        <nav class="smart-nav" id="mobileMenu" aria-label="Quick section navigation">
-          <div class="smart-nav-track">
-            <a class="smart-link active" href="#home" data-section="home">Home</a>
-            <a class="smart-link" href="#about" data-section="about">About</a>
-            <a class="smart-link" href="#team" data-section="team">Team</a>
-            <a class="smart-link" href="#story" data-section="story">Story</a>
-            <a class="smart-link" href="#hamper-tales" data-section="hamper-tales">Hamper Tales</a>
-            <a class="smart-link" href="#corporate" data-section="corporate">Corporate</a>
-            <a class="smart-link" href="#products" data-section="products">Products</a>
-            <a class="smart-link" href="#ordering" data-section="ordering">How To Order</a>
-            <a class="smart-link" href="#experience" data-section="experience">FAQ</a>
+        <nav class="navbar-links" id="mobileMenu" aria-label="Quick section navigation">
+          <div class="navbar-links-track">
+            <a class="navbar-link active" href="#home" data-section="home">Home</a>
+            <a class="navbar-link" href="#about" data-section="about">About</a>
+            <a class="navbar-link" href="#team" data-section="team">Team</a>
+            <a class="navbar-link" href="#story" data-section="story">Story</a>
+            <a class="navbar-link" href="#hamper-tales" data-section="hamper-tales">Hamper Tales</a>
+            <a class="navbar-link" href="#corporate" data-section="corporate">Corporate</a>
+            <a class="navbar-link" href="#products" data-section="products">Products</a>
+            <a class="navbar-link" href="#ordering" data-section="ordering">How To Order</a>
+            <a class="navbar-link" href="#experience" data-section="experience">FAQ</a>
           </div>
           <button class="quick-jump-trigger" type="button" aria-haspopup="dialog" aria-controls="quick-jump">
             Jump
@@ -579,7 +579,7 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
       const progressBar = document.querySelector(".scroll-progress");
-      const navLinks = Array.from(document.querySelectorAll(".smart-link"));
+      const navLinks = Array.from(document.querySelectorAll(".navbar-link"));
       const trackedSectionIds = ["home", "about", "team", "story", "hamper-tales", "corporate", "products", "ordering", "experience"];
       const jumpRoot = document.getElementById("quick-jump");
       const jumpInput = document.getElementById("quick-jump-input");
